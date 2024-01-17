@@ -2,9 +2,12 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import router from './router.js';
+import 'dotenv/config';
 
+const apiUrl = process.env.URL;
+console.log(apiUrl)
 const PORT = 5001;
-const urlBD = "mongodb+srv://user:123@cluster0.md2vsby.mongodb.net/?retryWrites=true&w=majority";
+const urlBD = apiUrl;
 const app = express()
 
 app.use(express.json())
